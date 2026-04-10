@@ -1,0 +1,31 @@
+<view class="page-shell">
+  <view class="card test-card" wx:if="{{currentQuestion}}">
+    <view class="topbar">
+      <view class="progress-wrap">
+        <view class="progress-title">第 {{currentQuestion.index}} / {{totalQuestions}} 题</view>
+        <view class="progress-track">
+          <view class="progress-bar" style="width: {{progressPercent}}%;"></view>
+        </view>
+      </view>
+      <view class="progress-text">已答 {{answeredCount}} 题</view>
+    </view>
+
+    <view class="question-title">{{currentQuestion.text}}</view>
+
+    <radio-group data-question-id="{{currentQuestion.id}}" bindchange="handleOptionChange">
+      <label wx:for="{{currentQuestion.options}}" wx:for-item="option" wx:key="value" hover-class="option-hover" hover-stay-time="70" class="option-card {{answerLocked ? 'disabled' : ''}}">
+        <radio value="{{option.valueText}}" checked="{{option.valueText === currentQuestion.answerValue}}" color="#4d6a53" />
+        <view class="option-code">{{option.optionCode}}</view>
+        <view class="option-text">{{option.label}}</view>
+      </label>
+    </radio-group>
+
+    <view class="footer-block">
+      <view class="hint">{{testHint}}</view>
+      <view class="footer-actions">
+        <button class="btn btn-secondary small-btn" hover-class="btn-hover-soft" bindtap="backHome">返回首页</button>
+        <button class="btn btn-secondary small-btn" hover-class="btn-hover-soft" bindtap="goPrevQuestion" disabled="{{currentIndex <= 0}}">上一题</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,163 @@
+@import "../../styles/theme.wxss";
+
+.result-card,
+.empty-card {
+  padding: 24rpx 20rpx;
+  position: relative;
+  overflow: hidden;
+  animation: fade-up 0.42s ease both;
+}
+
+.result-deco {
+  position: absolute;
+  border-radius: 999rpx;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.deco-a {
+  width: 170rpx;
+  height: 170rpx;
+  right: -42rpx;
+  top: -36rpx;
+  background: radial-gradient(circle, rgba(255, 215, 226, 0.92) 0%, rgba(255, 215, 226, 0.14) 72%, rgba(255, 215, 226, 0) 100%);
+  animation: floaty-soft 5.2s ease-in-out infinite;
+}
+
+.deco-b {
+  width: 132rpx;
+  height: 132rpx;
+  left: -20rpx;
+  top: 230rpx;
+  background: radial-gradient(circle, rgba(198, 235, 219, 0.9) 0%, rgba(198, 235, 219, 0.14) 72%, rgba(198, 235, 219, 0) 100%);
+  animation: floaty-soft 6s ease-in-out infinite;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.poster-box,
+.type-box,
+.panel {
+  border: 1rpx solid #eee7ef;
+  border-radius: 24rpx;
+  background: linear-gradient(180deg, #ffffff, #fffdfd);
+  padding: 20rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.poster-image {
+  width: 100%;
+  border-radius: 22rpx;
+  margin-bottom: 12rpx;
+}
+
+.poster-caption {
+  font-size: 24rpx;
+  line-height: 1.55;
+  color: #8a6877;
+  font-weight: 600;
+}
+
+.type-kicker {
+  font-size: 22rpx;
+  color: #7b8784;
+}
+
+.type-name {
+  margin-top: 10rpx;
+  font-size: 44rpx;
+  line-height: 1.28;
+  font-weight: 700;
+  color: #313937;
+}
+
+.match-badge {
+  display: inline-block;
+  margin-top: 12rpx;
+  padding: 10rpx 16rpx;
+  border-radius: 999rpx;
+  background: #fff1f5;
+  color: #cb6e8d;
+  font-size: 22rpx;
+}
+
+.type-intro {
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  line-height: 1.58;
+  color: #4b3c45;
+  font-weight: 600;
+}
+
+.type-sub,
+.panel-text,
+.dim-desc,
+.dim-score,
+.result-time,
+.empty-text {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  line-height: 1.68;
+  color: #64706d;
+}
+
+.panel {
+  margin-top: 22rpx;
+}
+
+.panel-title,
+.empty-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #313937;
+}
+
+.dim-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  margin-top: 8rpx;
+}
+
+.dim-item {
+  padding: 18rpx;
+  border-radius: 20rpx;
+  background: #ffffff;
+  border: 1rpx solid #f0e8f1;
+}
+
+.dim-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12rpx;
+  margin-bottom: 8rpx;
+}
+
+.dim-name {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #313937;
+}
+
+.note-panel {
+  background: #f9fbfa;
+}
+
+.note-text {
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  line-height: 1.72;
+  color: #87918d;
+}
+
+.action-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  margin-top: 22rpx;
+}

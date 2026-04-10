@@ -1,0 +1,48 @@
+<view class="page-shell">
+  <view class="hero-card card">
+    <view class="deco deco-peach"></view>
+    <view class="deco deco-mint"></view>
+    <view class="eyebrow">SBTI 娱乐人格测试</view>
+
+    <view class="title-wrap">
+      <view class="title-line">MBTI 已经过时，</view>
+      <view class="title-line accent">SBTI 来了。</view>
+    </view>
+
+    <view class="hero-desc">一份抽象但完整的娱乐人格测试。单题自动切换，几分钟出结果，适配原生小程序的紧凑体验。</view>
+
+    <view class="stat-grid">
+      <view class="stat-card">
+        <view class="stat-num">30+</view>
+        <view class="stat-label">测试题目</view>
+      </view>
+      <view class="stat-card">
+        <view class="stat-num">15</view>
+        <view class="stat-label">人格维度</view>
+      </view>
+      <view class="stat-card">
+        <view class="stat-num">Auto</view>
+        <view class="stat-label">自动切题</view>
+      </view>
+    </view>
+
+    <view class="feature-row">
+      <view class="feature-chip">随机插题</view>
+      <view class="feature-chip">隐藏分支</view>
+      <view class="feature-chip">本地历史</view>
+    </view>
+
+    <view wx:if="{{latestRecord}}" class="latest-card">
+      <view class="latest-top">
+        <view class="latest-title">最近一次结果</view>
+        <view class="latest-time">{{latestRecord.timeText}}</view>
+      </view>
+      <view class="latest-type">{{latestRecord.finalType.code}}（{{latestRecord.finalType.cn}}）</view>
+      <view class="latest-sub">{{latestRecord.finalType.intro}}</view>
+      <button class="btn btn-secondary small-btn" hover-class="btn-hover-soft" bindtap="openLatestResult">查看结果</button>
+    </view>
+
+    <button class="btn btn-primary hero-btn" hover-class="btn-hover-main" bindtap="startTest">开始测试</button>
+    <button class="text-btn" hover-class="text-btn-hover" bindtap="openHistory">查看完整历史</button>
+  </view>
+</view>

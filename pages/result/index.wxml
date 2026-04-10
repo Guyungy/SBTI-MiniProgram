@@ -1,0 +1,56 @@
+<view class="page-shell">
+  <view wx:if="{{result}}" class="card result-card">
+    <view class="result-deco deco-a"></view>
+    <view class="result-deco deco-b"></view>
+    <view class="hero-section">
+      <view class="poster-box">
+        <image wx:if="{{result.finalType.image}}" class="poster-image" mode="widthFix" src="{{result.finalType.image}}"></image>
+        <view class="poster-caption">{{result.finalType.intro}}</view>
+      </view>
+
+      <view class="type-box">
+        <view class="type-kicker">{{result.modeKicker}}</view>
+        <view class="type-name">{{result.finalType.code}}（{{result.finalType.cn}}）</view>
+        <view class="match-badge">{{result.badge}}</view>
+        <view class="type-intro">{{result.finalType.intro}}</view>
+        <view class="type-sub">{{result.sub}}</view>
+        <view class="result-time">测试时间：{{result.timeText}}</view>
+      </view>
+    </view>
+
+    <view class="panel">
+      <view class="panel-title">该人格的简单解读</view>
+      <view class="panel-text">{{result.finalType.desc}}</view>
+    </view>
+
+    <view class="panel">
+      <view class="panel-title">十五维度评分</view>
+      <view class="dim-list">
+        <view wx:for="{{result.dimList}}" wx:for-item="dim" wx:key="dim" class="dim-item">
+          <view class="dim-top">
+            <view class="dim-name">{{dim.name}}</view>
+            <view class="dim-score">{{dim.level}} / {{dim.score}}分</view>
+          </view>
+          <view class="dim-desc">{{dim.explanation}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="panel note-panel">
+      <view class="panel-title">友情提示</view>
+      <view class="note-text">{{result.funNote}}</view>
+    </view>
+
+    <view class="action-group">
+      <button class="btn btn-secondary" hover-class="btn-hover-soft" bindtap="openHistory">查看历史记录</button>
+      <button class="btn btn-secondary" hover-class="btn-hover-soft" bindtap="restartTest">重新测试</button>
+      <button class="btn btn-primary" hover-class="btn-hover-main" bindtap="backHome">回到首页</button>
+    </view>
+  </view>
+
+  <view wx:elif="{{empty}}" class="card empty-card">
+    <view class="empty-title">还没有可查看的结果</view>
+    <view class="empty-text">先完成一次测试，再回来查看人格画像。</view>
+    <button class="btn btn-primary" bindtap="backHome">回到首页</button>
+  </view>
+</view>

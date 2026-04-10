@@ -1,0 +1,17 @@
+<view class="page-shell">
+  <view wx:if="{{records.length}}" class="list-wrap">
+    <view wx:for="{{records}}" wx:for-item="record" wx:key="id" hover-class="history-hover" class="history-card card" data-id="{{record.id}}" bindtap="openResult">
+      <view class="history-top">
+        <view class="history-type">{{record.finalType.code}}（{{record.finalType.cn}}）</view>
+        <view class="history-time">{{record.timeText}}</view>
+      </view>
+      <view class="history-sub">{{record.finalType.intro}}</view>
+    </view>
+  </view>
+
+  <view wx:else class="card empty-card">
+    <view class="empty-title">还没有测试记录</view>
+    <view class="empty-text">先完成一次测试，这里会保存你最近的历史结果。</view>
+    <button class="btn btn-primary" bindtap="backHome">回到首页</button>
+  </view>
+</view>
